@@ -7,7 +7,7 @@ export class UserController {
     if (res) {
       const { title, last } = res.data.results[0].name;
       return {
-        name: title,
+        title,
         last
       }
     }
