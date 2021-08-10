@@ -11,7 +11,7 @@ app.use(cors({
 
 app.use(function(req, res, next) {
   const { headers } = req;
-  console.log(`Received a request from ${headers.origin}.`);
+  if (headers.origin) console.log(`Received a request from ${headers.origin}.`);
   next();
 });
 

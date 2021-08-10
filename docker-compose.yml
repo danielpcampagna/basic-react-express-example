@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  server:
+    build: ./server/
+    image: react-express-example/server
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - ree-network
+
+  app:
+    build: ./app/
+    image: react-express-example/app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - ree-network
+
+networks:
+  ree-network:
